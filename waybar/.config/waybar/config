@@ -102,7 +102,7 @@
 
     "mpris": {
     	"player": "spotify",
-    	"format": "[ {status_icon} <i>{dynamic}</i> ]",
+    	"format": "[ {status_icon}<i> {dynamic}</i> ]",
     	"tooltip-format": "{status_icon} ({player}) {dynamic} [{position}/{length}]",
     	"status-icons": {
     		"paused": " ",
