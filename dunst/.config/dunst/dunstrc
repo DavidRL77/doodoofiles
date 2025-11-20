@@ -9,12 +9,12 @@ sort=update
 [urgency_low]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
-timeout = 2
+timeout = 4
 
 [urgency_normal]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
-timeout = 2
+timeout = 4
 
 [urgency_critical]
 background = "#1e1e2e"
