@@ -19,3 +19,4 @@ vesktop
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 dragon-drop
 ttf-hack-nerd
+cowsay
