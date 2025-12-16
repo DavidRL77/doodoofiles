@@ -21,7 +21,7 @@ play = [
     { run = 'mpv --force-window "$@"', orphan = true, for = "unix", desc="mpv" },
 ]
 play_special = [
-	{run = 'mpv --force-window --profile=big-cache "$@"', orphan=true, desc="mpv big-cache"}
+	{run = 'mpv --force-window --profile=small-subs "$@"', orphan=true, desc="mpv small-subs"}
 ]
 media_options = [
 	{run = '~/.config/yazi/scripts/toggle-watched.sh "$@"', desc = "Mark watched", for = "unix"},
@@ -59,8 +59,7 @@ rules = [
     # Image
     { mime = "image/*", use = ["view", "reveal"] },
     # Media
-    # { name = "/run/media/**", mime = "{audio,video}/*", use = ["play", "play_special"]}, # More options for video playing in external media for better performance
-    { mime = "{audio,video}/*", use = ["play","media_options"] },
+    { mime = "{audio,video}/*", use = ["play", "play_special","media_options"] },
     # Archive
     { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = ["extract", "reveal"] },
     # JSON
