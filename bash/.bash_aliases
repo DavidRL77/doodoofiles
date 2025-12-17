@@ -15,6 +15,7 @@ alias test-keys='wev'
 alias diff='diff --color'
 alias actually='cowsay -f actually'
 alias goku='cowsay -f goku'
+alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
 
 # Temp for testing with the damn hdmi port
 function check_hdmi() {
