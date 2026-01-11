@@ -54,8 +54,8 @@ rules = [
     # Folder
     { mime = "folder/*", use = ["open", "reveal"] },
     # Text
+	{ mime = "text/shellscript", use = ["edit","script", "reveal"]},
     { mime = "text/*", use = ["edit", "open", "reveal"] },
-	{ mime = "text/shellscript", use = ["edit","script"]},
     # Image
     { mime = "image/*", use = ["view","open","reveal"] },
     # Media
