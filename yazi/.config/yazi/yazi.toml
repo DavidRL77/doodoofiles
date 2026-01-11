@@ -52,14 +52,14 @@ rules = [
 	# Executable
 	{ mime = "application/microsoft.portable-executable", use = ["execute", "reveal"] },
     # Folder
-    { name = "*/", use = ["open", "reveal"] },
+    { mime = "folder/*", use = ["open", "reveal"] },
     # Text
-    { mime = "text/*", use = ["edit"] },
-	{ mime = "text/shellscript", use = ["script"]},
+    { mime = "text/*", use = ["edit", "open", "reveal"] },
+	{ mime = "text/shellscript", use = ["edit","script"]},
     # Image
-    { mime = "image/*", use = ["view", "reveal"] },
+    { mime = "image/*", use = ["view","open","reveal"] },
     # Media
-    { mime = "{audio,video}/*", use = ["play", "play_special","media_options"] },
+    { mime = "{audio,video}/*", use = ["play", "play_special","media_options", "reveal"] },
     # Archive
     { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = ["extract", "reveal"] },
     # JSON
