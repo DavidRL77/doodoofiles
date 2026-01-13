@@ -68,7 +68,7 @@ rules = [
     # Empty file
     { mime = "inode/empty", use = ["edit", "reveal"] },
     # Fallback
-    { name = "*", use = ["open", "reveal"] },
+    { url = "*", use = ["open", "reveal"] },
 ]
 
 [plugin]
