@@ -3,4 +3,6 @@
     "Alt-Z": "command:set wordwrap off,command:set softwrap off",
     "Alt-z": "command:set wordwrap on,command:set softwrap on",
     "CtrlUnderscore": "lua:comment.comment",
+    "OldBackspace": "DeleteWordLeft",
+    "CtrlDelete": "DeleteWordRight",
 }
