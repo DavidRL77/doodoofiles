@@ -17,12 +17,6 @@ alias actually='cowsay -f actually'
 alias goku='cowsay -f goku'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
 
-# Temp for testing with the damn hdmi port
-function check_hdmi() {
-	hdmi_id="$(wpctl status | grep "DisplayPort 1" | sed 's/\..*//' | grep -oE '[0-9]+')"
-	wpctl inspect "$hdmi_id"
-}
-
 function waifu() {
 	local file="$(~/scripts/waifu/waifu.sh "$@")" || return
 	kitty icat "$file"
@@ -66,3 +60,6 @@ function web() { # Go to my class folder
 	cd "$HOME/programming/desarrollo-web/$1"
 }
 
+function keepawake() {
+	systemd-inhibit --what=handle-lid-switch:sleep sleep "${1:-1d}"
+}
