@@ -1,10 +1,8 @@
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/2421f08e-3f18-45a7-837c-de2e59438040" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e357fda8-0a3a-4f3d-928c-f13aee950262" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/210b18b4-ffd1-4fce-8502-39c5dedbd84d" />
- 
- # My dotfiles for arch linux.
+<img alt="Image" src="assets/rice.gif" />
 
-This is my personal repo to keep my dotfiles version controlled and be able to share it with friends. Right now they suck, but I'm working on it!
+# My dotfiles for arch linux.
+
+This is my personal repo to keep my dotfiles version controlled and be able to share it with friends.
 
 # Structure
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) to manage my dotfiles with symlinks. It basically works by taking everything within a folder
