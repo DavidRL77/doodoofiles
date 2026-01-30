@@ -16,6 +16,7 @@ alias diff='diff --color'
 alias actually='cowsay -f actually'
 alias goku='cowsay -f goku'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
+alias clock="termdown -z"
 
 function waifu() {
 	local file="$(~/scripts/waifu/waifu.sh "$@")" || return
