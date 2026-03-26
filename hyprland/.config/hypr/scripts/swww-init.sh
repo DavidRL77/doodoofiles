@@ -1,6 +1,6 @@
 #!/bin/sh
 
-swww-daemon --no-cache & 
+awww-daemon --no-cache & 
 
 sleep 0.1
 
