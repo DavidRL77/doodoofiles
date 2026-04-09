@@ -25,7 +25,7 @@ function waifu() {
 
 function daily_waifu() {
 	local possible_types="sfw waifu\nsfw neko\nsfw shinobu\nsfw megumin"
-	local program=("${1:-kitty}") # Use array for programs with args
+	local program=("${1:-timg}") # Use array for programs with args
 	[ "${program[0]}" = "kitty" ] && local program=(kitty icat)
 	
 	local waifu_file="$(~/scripts/waifu/daily-waifu.sh $(printf "$possible_types" | shuf -n1))" || return
