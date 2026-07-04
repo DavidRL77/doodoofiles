@@ -2,6 +2,9 @@
 show_hidden = false
 linemode = "size"
 
+[tasks]
+file_workers = 1
+
 [opener]
 edit = [
     { run = 'micro %s', block = true, for = "unix" },
@@ -57,6 +60,8 @@ rules = [
 	{ mime = "text/shellscript", use = ["edit", "script", "reveal"]},
 	# Folder
 	{ url = "*/", use = ["enter","open", "reveal" ] },
+	# Html
+	{ mime = "text/html", use = ["edit", "open", "reveal"] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
