@@ -1,0 +1,1 @@
+hl.env("WALLPAPER_COMMAND", scriptPath.."wallpaper/set-wallpaper-hellwal.sh")
