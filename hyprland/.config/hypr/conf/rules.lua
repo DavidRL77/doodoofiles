@@ -94,9 +94,18 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
-    name="launcher-blur",
+    name="waybar-blur",
     match = {
         namespace = "waybar"
     },
     blur=true,
+})
+
+hl.layer_rule({
+    name="notification-blur",
+    match = {
+        namespace = "notifications"
+    },
+    blur=true,
+    ignore_alpha=0
 })

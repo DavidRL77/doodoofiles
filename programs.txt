@@ -7,7 +7,7 @@ rtorrent
 obs
 bluetui
 fuzzel
-dunst
+mako
 waybar
 hellwal
 swww

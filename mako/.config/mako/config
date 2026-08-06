@@ -1,0 +1,11 @@
+include=~/.cache/hellwal/mako_colors
+border-radius=5
+margin=5
+
+group-by=app-name
+
+[urgency=low]
+default-timeout=4000
+
+[urgency=normal]
+default-timeout=4000
