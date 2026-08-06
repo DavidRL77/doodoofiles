@@ -6,8 +6,8 @@ local resizeAmount = 50
 -- Programs & menus
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(Programs.terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(Programs.fileManager))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(Programs.menu))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(Programs.taskManager))
+hl.bind(mainMod .. " + R", function() smart_open(Programs.menu, true) end)
+hl.bind(mainMod .. " + Escape", function() smart_open(Programs.taskManager, true) end)
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(Programs.powerMenu))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(Programs.menuMenu))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(Programs.clipboardMenu))

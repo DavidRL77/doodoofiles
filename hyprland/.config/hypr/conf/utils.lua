@@ -49,3 +49,20 @@ function dofile_or_value(file, default_value)
 
     return dofile(file)
 end
+
+---Only open a process once
+---@param cmd string
+---@param kill? boolean If the process is already open, kill it?
+function smart_open(cmd, kill)
+    local pgrep = io.popen("pgrep -fx \"" .. cmd .. "\"")
+    if not pgrep then return end
+
+    local result = pgrep:read("*a")
+    pgrep:close()
+
+    if string.len(result) == 0 then
+        hl.exec_cmd(cmd)
+    elseif kill then
+        hl.exec_cmd("kill " .. result)
+    end
+end
