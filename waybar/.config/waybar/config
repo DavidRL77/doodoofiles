@@ -4,7 +4,7 @@
 		
     "modules-left": ["custom/power","custom/notifications","clock", "mpris"],
     "modules-center": ["ext/workspaces"],
-    "modules-right": ["bluetooth", "network", "battery", "pulseaudio", "cpu"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "battery"],
 
     "ext/workspaces": {
         "all-outputs": true,
@@ -78,7 +78,7 @@
             "headset": " ",
             "default": [" "],
         },
-        "on-click": "kitty -e --class floating wiremix",
+        "on-click": "kitty -e --class floating wiremix -v output",
     },
 
     "clock": {

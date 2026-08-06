@@ -1,1 +1,1 @@
-hl.env("WALLPAPER_COMMAND", scriptPath.."wallpaper/set-wallpaper-hellwal.sh")
+hl.env("WALLPAPER_COMMAND", Globals.scriptPath.."wallpaper/set-wallpaper-hellwal.sh")

@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function ()
+    hl.exec_cmd(Globals.hyprScripts.."swww-init.sh")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store -max-items 20")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store -max-items 20")
+end)

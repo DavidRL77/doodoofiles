@@ -1,4 +1,4 @@
-alias hyprconf='cd ~/.config/hypr/conf'
+alias hyprconf='code ~/.config/hypr'
 alias bashreload='source ~/.bashrc'
 alias please='sudo '
 alias kys='systemctl poweroff '

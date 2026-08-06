@@ -1,4 +1,4 @@
-local colors = dofile_or_value(cachePath.."hellwal/hyprland_colors.lua", {
+local colors = dofile_or_value(Globals.cachePath.."hellwal/hyprland_colors.lua", {
     border1="#ffffff",
     border2="#ffffff"
 })
