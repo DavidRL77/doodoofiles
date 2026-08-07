@@ -7,5 +7,6 @@ return {
     menuMenu = Globals.scriptPath.."menus/menu-menu.sh",
     clipboardMenu = Globals.scriptPath.."menus/cliphist-fuzzel-img.sh",
     screenshot = "hyprshot -m region -o $(xdg-user-dir SCREENSHOTS)/ --freeze",
-    screenshotClipboardOnly = "hyprshot -m region --clipboard-only --freeze"
+    screenshotClipboardOnly = "hyprshot -m region --clipboard-only --freeze",
+    colorPicker = "hyprpicker -a"
 }

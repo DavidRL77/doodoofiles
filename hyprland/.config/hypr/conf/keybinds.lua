@@ -13,6 +13,8 @@ hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(Programs.menuMenu))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(Programs.clipboardMenu))
 hl.bind("Print", hl.dsp.exec_cmd(Programs.screenshot))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(Programs.screenshotClipboardOnly))
+hl.bind(mainMod .. " + SHIFT + C", function() smart_open(Programs.colorPicker, true) end)
+
 
 -- Window control
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
