@@ -57,12 +57,12 @@ hl.window_rule({
     float=true
 })
 
-hl.window_rule({
-    match={
-        class = "swayimg.+"
-    },
-    float=true
-})
+-- hl.window_rule({
+--     match={
+--         class = "swayimg.+"
+--     },
+--     float=true
+-- })
 
 hl.window_rule({
     match={
@@ -105,6 +105,15 @@ hl.layer_rule({
     name="notification-blur",
     match = {
         namespace = "notifications"
+    },
+    blur=true,
+    ignore_alpha=0
+})
+
+hl.layer_rule({
+    name="syshud-blur",
+    match = {
+        namespace = "syshud"
     },
     blur=true,
     ignore_alpha=0

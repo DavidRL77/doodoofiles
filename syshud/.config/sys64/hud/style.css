@@ -1,0 +1,68 @@
+@import "../../../.cache/hellwal/colors.scss";
+
+
+#syshud {
+	background: transparent;
+}
+
+#syshud .box_layout {
+	background: alpha(@background,0.8);
+	border-radius: 25px;
+	border: 1px solid @color1;
+	margin: 10px;
+}
+
+#syshud .box_layout image {
+	color: @foreground;
+}
+
+#syshud scale {
+	margin: 0px;
+	padding: 0px;
+}
+#syshud label {
+	color: alpha(@foreground, 0.5);
+}
+
+/* Scale */
+#syshud scale {
+	padding: 0px;
+	min-height: 5px;
+	min-width: 5px;
+}
+#syshud scale trough {
+	border-radius: 3px;
+	background: alpha(@color1, 0.1);
+	min-height: 5px;
+	min-width: 5px;
+	padding: 0px;
+}
+#syshud scale.horizontal highlight {
+	border-radius: 3px;
+	min-height: 5px;
+	min-width: 5px;
+	background: alpha(@color1, 0.75);
+	margin: 0px;
+	border:none;
+}
+#syshud scale slider {
+	margin: 0px;
+	background: transparent;
+	min-height: 5px;
+	min-width: 5px;
+	box-shadow: none;
+	padding: 0px;
+	border: none;
+}
+
+/* Levels */
+#syshud .muted {
+}
+#syshud .low {
+}
+#syshud .medium {
+}
+#syshud .high {
+}
+
+

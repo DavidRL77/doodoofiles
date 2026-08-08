@@ -1,4 +1,4 @@
 background-color=#%%color0%%aa
 text-color=#%%color7%%ff
 border-color=#%%color1%%ff
-progress-color=over #%%color2%%ff
+progress-color=source #%%color2%%dd

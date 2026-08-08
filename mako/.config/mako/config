@@ -1,10 +1,23 @@
 include=~/.cache/hellwal/mako_colors
 border-radius=5
 margin=5
-group-by=app-icon
+group-by=app-name
+max-history=20
 
 [urgency=low]
 default-timeout=4000
 
 [urgency=normal]
 default-timeout=4000
+
+[app-name=status]
+layer=overlay
+history=0
+anchor=top-center
+group-by=app-name
+format=<b>%s</b>\n%b
+text-alignment=center
+width=100
+
+[app-name=status group-index=0]
+invisible=0
