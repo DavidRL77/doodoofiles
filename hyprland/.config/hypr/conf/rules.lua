@@ -57,12 +57,12 @@ hl.window_rule({
     float=true
 })
 
--- hl.window_rule({
---     match={
---         class = "swayimg.+"
---     },
---     float=true
--- })
+hl.window_rule({
+    match={
+        class = "swayimg.+"
+    },
+    float=true
+})
 
 hl.window_rule({
     match={

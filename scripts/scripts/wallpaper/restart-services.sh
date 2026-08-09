@@ -3,6 +3,7 @@
 # Separate script to restart only the necessary services (add/remove as needed)
 
 systemctl --user restart waybar&
+systemctl --user restart syshud&
 pkill -USR1 cava&
 
 # For some reason I need to send this to kitty as well when

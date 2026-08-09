@@ -17,6 +17,7 @@ alias actually='cowsay -f actually'
 alias goku='cowsay -f goku'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
 alias clock="termdown -z"
+alias yt-dlp-mp3="yt-dlp -t mp3 --embed-thumbnail -o '%(title)s.%(ext)s'"
 
 function waifu() {
 	local file="$(~/scripts/waifu/waifu.sh "$@")" || return
