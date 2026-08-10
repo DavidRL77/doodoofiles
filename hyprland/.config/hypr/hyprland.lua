@@ -1,7 +1,8 @@
 Globals = {
     cachePath = os.getenv("HOME") .. "/.cache/",
     scriptPath = os.getenv("HOME") .. "/scripts/",
-    hyprScripts = os.getenv("HOME") .. "/.config/hypr/scripts/"
+    hyprScripts = os.getenv("HOME") .. "/.config/hypr/scripts/",
+    shaderPath = os.getenv("HOME") .. "/.config/hypr/shaders/"
 }
 
 require("conf.utils")
@@ -13,4 +14,5 @@ require("conf.animations")
 require("conf.keybinds")
 require("conf.input")
 require("conf.rules")
+require("conf.plugins")
 require("monitors") --hyprmoncfg

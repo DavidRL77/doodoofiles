@@ -1,3 +1,7 @@
+function debug_notify(value)
+    hl.notification.create({text=tostring(value),timeout=5000})
+end
+
 --- Resize window based on percentage of monitor size
 --- @param x integer
 --- @param y integer

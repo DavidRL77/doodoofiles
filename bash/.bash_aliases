@@ -18,6 +18,7 @@ alias goku='cowsay -f goku'
 alias pacclean='sudo pacman -Rns $(pacman -Qdtq)'
 alias clock="termdown -z"
 alias yt-dlp-mp3="yt-dlp -t mp3 --embed-thumbnail -o '%(title)s.%(ext)s'"
+alias cava-bg="kitten panel --class=bg-panel --edge=background -o background_opacity=0 cava & disown"
 
 function waifu() {
 	local file="$(~/scripts/waifu/waifu.sh "$@")" || return

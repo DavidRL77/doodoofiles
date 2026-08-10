@@ -38,7 +38,8 @@
 	min-width: 5px;
 	padding: 0px;
 }
-#syshud scale.horizontal highlight {
+#syshud scale.horizontal highlight,
+#syshud scale.vertical highlight  {
 	border-radius: 3px;
 	min-height: 5px;
 	min-width: 5px;
@@ -46,6 +47,7 @@
 	margin: 0px;
 	border:none;
 }
+
 #syshud scale slider {
 	margin: 0px;
 	background: transparent;
