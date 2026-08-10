@@ -1,0 +1,14 @@
+-a
+status
+
+# Warning level
+-w
+15
+-W
+I don't feel so good...
+
+# Critical level
+-c
+10
+-C
+HEEEELP HEEEELP
