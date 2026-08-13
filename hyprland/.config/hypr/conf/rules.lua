@@ -119,7 +119,10 @@ hl.layer_rule({
     ignore_alpha=0
 })
 
-hl.layer_rule({
+
+if hl.plugin.darkwindow then
+    
+    hl.layer_rule({
     name="bg-panel-shader",
     match={
         namespace="bg-panel"
@@ -127,4 +130,6 @@ hl.layer_rule({
     ["darkwindow:shade"] = "shadow",
     blur=true,
     ignore_alpha=0
-})
+    })
+
+end
