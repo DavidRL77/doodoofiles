@@ -3,6 +3,7 @@ border-radius=5
 margin=5
 group-by=app-name
 max-history=20
+on-button-middle=dismiss --no-history
 
 [urgency=low]
 default-timeout=4000
