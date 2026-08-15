@@ -18,6 +18,6 @@ hl.animation({leaf="layersOut",enabled=true, speed=1.5,bezier="linear",style="fa
 hl.animation({leaf="fadeLayersIn",enabled=true, speed=1.79,bezier="almostLinear"})
 hl.animation({leaf="fadeLayersOut",enabled=true, speed=1.39,bezier="almostLinear"})
 hl.animation({leaf="workspaces",enabled=true, speed=1.94,bezier="almostLinear",style="slide"})
-hl.animation({leaf="workspacesIn",enabled=true, speed=1.21,bezier="almostLinear",style="slide 50%"})
-hl.animation({leaf="workspacesOut",enabled=true, speed=1.21,bezier="almostLinear",style="slide 50%"})
+hl.animation({leaf="workspacesIn",enabled=true, speed=1.21,bezier="almostLinear",style="slide"})
+hl.animation({leaf="workspacesOut",enabled=true, speed=1.21,bezier="almostLinear",style="slide"})
 hl.animation({leaf="monitorAdded",enabled=false})
