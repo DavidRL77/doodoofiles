@@ -2,16 +2,6 @@ function debug_notify(value)
     hl.notification.create({text=tostring(value),timeout=5000})
 end
 
-function execute_and_return(cmd)
-    local process = io.popen(cmd)
-    if not process then return nil end
-
-    local result = process:read("*a")
-    process:close()
-
-    return result
-end
-
 --- Resize window based on percentage of monitor size
 --- @param x integer
 --- @param y integer
@@ -68,12 +58,12 @@ end
 ---@param cmd string
 ---@param kill? boolean If the process is already open, kill it?
 function smart_open(cmd, kill)
-    local result = execute_and_return("pgrep -fx \"" .. cmd .. "\"")
-    if not result then return end
-
-    if string.len(result) == 0 then
-        hl.exec_cmd(cmd)
-    elseif kill then
-        hl.exec_cmd("kill " .. result)
+    -- Divide each part of the command like this so it's easier to chain
+    local pgrepCmd = "pgrep -fx \""..cmd.."\""
+    local killCmd = "kill $("..pgrepCmd..")"
+    if kill then
+        hl.exec_cmd(pgrepCmd.." && "..killCmd.." || "..cmd)
+    else
+        hl.exec_cmd(pgrepCmd .." || "..cmd)
     end
 end
