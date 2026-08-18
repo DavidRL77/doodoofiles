@@ -86,4 +86,6 @@ hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind(mainMod .. " + Prior", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind(mainMod .. " + Next", hl.dsp.exec_cmd("playerctl next"))
 
+-- Extra
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$WALLPAPER_COMMAND $(xdg-user-dir WALLPAPERS)/*"))
