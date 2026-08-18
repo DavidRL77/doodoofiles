@@ -66,3 +66,10 @@ function web() { # Go to my class folder
 function keepawake() {
 	systemd-inhibit --what=handle-lid-switch:sleep sleep "${1:-1d}"
 }
+
+function measure() {
+	start="$(echo $(($(date +%s%N)/1000000)))"
+	$@ # Run the command
+	end="$(echo $(($(date +%s%N)/1000000)))"
+	echo -e "\033[0;32mCommand took $(($end - $start)) ms"
+}
