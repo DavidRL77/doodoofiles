@@ -1,0 +1,12 @@
+[Unit]
+Description=Execute custom awww script
+Requisite=awww-daemon.service
+After=awww-daemon.service
+ConditionFileIsExecutable=%h/.config/awww/awww.sh
+
+[Service]
+ExecStart=%h/.config/awww/awww.sh
+Type=oneshot
+
+[Install]
+WantedBy=awww-daemon.service

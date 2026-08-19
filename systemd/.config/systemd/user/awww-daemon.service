@@ -1,0 +1,13 @@
+[Unit]
+Description=Start awww-daemon without cache
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+Wants=awww-custom.service
+
+[Service]
+ExecStart=/usr/bin/awww-daemon --no-cache
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
