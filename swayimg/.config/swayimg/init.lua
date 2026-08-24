@@ -13,6 +13,7 @@ end
 -- General
 swayimg.overlay = true
 swayimg.gallery.window_color = 0x00000000
+swayimg.viewer.set_window_background(0x00000000)
 swayimg.text.color = 0xffffffff
 swayimg.text.visible = false
 
