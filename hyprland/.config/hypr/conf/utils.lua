@@ -30,6 +30,22 @@ function smart_float(window)
     hl.dispatch(hl.dsp.window.center({window=window}))
 end
 
+function smart_split(window, split_ratio)
+    window = window or hl.get_active_window()
+    split_ratio = split_ratio or 1.5
+    if not window then return end
+
+    hl.dispatch(hl.dsp.layout("togglesplit"))
+    hl.dispatch(hl.dsp.window.swap({direction="up", window=window}))
+
+    local ratio = window.size.x/window.size.y   
+    if ratio >= 1.5 then -- when the window is on horizontal direction
+        hl.dispatch(hl.dsp.layout("splitratio "..split_ratio.." exact"))
+    else
+        hl.dispatch(hl.dsp.layout("splitratio 1 exact"))
+    end
+end
+
 function smart_pin(window)
     window = window or hl.get_active_window()
     if not window then return end

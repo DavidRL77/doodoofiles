@@ -2,7 +2,8 @@ Globals = {
     cachePath = os.getenv("HOME") .. "/.cache/",
     scriptPath = os.getenv("HOME") .. "/scripts/",
     hyprScripts = os.getenv("HOME") .. "/.config/hypr/scripts/",
-    shaderPath = os.getenv("HOME") .. "/.config/hypr/shaders/"
+    shaderPath = os.getenv("HOME") .. "/.config/hypr/shaders/",
+    horizontalWindowClasses = {"code"} -- Windows that will be split horizontally when opened
 }
 
 require("conf.utils")

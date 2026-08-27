@@ -8,3 +8,11 @@ end)
 hl.on("monitor.added", function ()
     hl.exec_cmd("systemctl --user restart awww-daemon")
 end)
+
+hl.on("window.open", function (window)
+    for i,class in ipairs(Globals.horizontalWindowClasses) do
+        if window.class == class then
+            smart_split(window, 1.6)
+        end
+    end
+end)
