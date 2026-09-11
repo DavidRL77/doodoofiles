@@ -18,9 +18,9 @@ swayimg.text.color = 0xffffffff
 swayimg.text.visible = false
 
 -- Info viewer position
-swayimg.viewer.set_text("topleft", {
-  "{name}"
-})
+swayimg.viewer.text = {
+	["topleft"]={"{name}"}
+}
 
 -- Key bindings
 swayimg.viewer.on_key("q", exit)
