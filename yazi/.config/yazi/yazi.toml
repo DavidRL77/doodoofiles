@@ -53,6 +53,10 @@ enter = [
 	{ run = "ya emit cd %s", desc = "enter" }
 ]
 
+markdown = [
+	{ run = "glow -t %s", block=true }
+]
+
 [open]
 rules = [
 	{url = "bulk-rename.txt", use = ["edit"]},
@@ -62,6 +66,8 @@ rules = [
 	{ url = "*/", use = ["enter","open", "reveal" ] },
 	# Html
 	{ mime = "text/html", use = ["edit", "open", "reveal"] },
+	# Markdown
+	{ url = "*.md", use=[ "edit", "markdown", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
