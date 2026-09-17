@@ -59,10 +59,6 @@ function save_waifu() {
 	local final_file="$output"/"$category"_"$timestamp"
 	cp "$file" "$final_file"
 	echo "$final_file"
-}	
-
-function web() { # Go to my class folder
-	cd "$HOME/programming/desarrollo-web/$1"
 }
 
 function keepawake() {
@@ -74,4 +70,32 @@ function measure() {
 	$@ # Run the command
 	end="$(echo $(($(date +%s%N)/1000000)))"
 	echo -e "\033[0;32mCommand took $(($end - $start)) ms"
+}
+
+function loop() {
+	local i=0
+	while true; do
+		eval "$*" || return
+
+		# Flush all input before reading
+		while read -t 0; do :; done
+		# Input loop, only exits when certain keys are pressed
+		while true; do
+			read -rsn1 key
+			if [[ "$key" == $'\e' ]]; then
+				read -rsn2 key
+			fi
+			case $key in
+				'q')
+				return ;;
+				'[D' | '[A')
+				((i > 0)) && ((i--)) && break ;;
+				'[C' | '[B')
+				((i++))
+				break ;;
+				*)
+				continue ;;
+			esac
+		done
+	done
 }
