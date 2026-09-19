@@ -15,7 +15,7 @@ preset_tags="$data_dir/tags.txt"
 
 ratings="$data_dir/ratings.txt"
 
-[ "$rating" = "random" ] && category="$(shuf -n 1 "$ratings")"
+[ "$rating" = "random" ] && rating="$(shuf -n 1 "$ratings")"
 
 if ! grep -Fxq "$rating" "$ratings"; then
 	echo "Invalid rating $rating" >&2
@@ -30,5 +30,4 @@ result="$(booru-cli download -r $rating -s random -t $tags -T $blacklist -l 1 --
 
 mv $result $waifu_file
 
-# setfattr "$waifu_file" -n user.category -v "$category" 
 echo $waifu_file
