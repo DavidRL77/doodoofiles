@@ -29,7 +29,7 @@ function waifu() {
 }
 
 function daily_waifu() {
-	local program=("${1:-timg}") # Use array for programs with args
+	local program=("${1:-timg}" "-C") # Use array for programs with args
 	[ "${program[0]}" = "kitty" ] && local program=(kitty icat)
 	
 	local waifu_file
