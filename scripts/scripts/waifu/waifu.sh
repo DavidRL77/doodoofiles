@@ -6,6 +6,7 @@ waifu_file="/tmp/waifu"
 
 rating="${1:-general}"
 tags="${2:-random}"
+client="${3:-safebooru}"
 # Replace all newlines with commas
 blacklist=$(paste -sd "," "$data_dir/blacklist.txt")
 
@@ -17,9 +18,20 @@ ratings="$data_dir/ratings.txt"
 
 [ "$rating" = "random" ] && rating="$(shuf -n 1 "$ratings")"
 
+
 if ! grep -Fxq "$rating" "$ratings"; then
-	echo "Invalid rating $rating" >&2
+	echo "Invalid rating '$rating'" >&2
 	cat "$ratings" >&2
+	exit 1
+fi
+
+clients="$data_dir/clients.txt"
+
+[ "$clients" = "random" ] && client="$(shuf -n 1 "$clients")"
+
+if ! grep -Fxq "$client" "$clients"; then
+	echo "Invalid client '$client'" >&2
+	cat "$clients" >&2
 	exit 1
 fi
 
