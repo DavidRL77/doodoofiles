@@ -35,7 +35,7 @@ if ! grep -Fxq "$client" "$clients"; then
 	exit 1
 fi
 
-result="$(booru-cli download -r $rating -s random -t $tags -T $blacklist -l 1 --clear-temp)" || {
+result="$(booru-cli download -r $rating -s random -t $tags -T $blacklist -c $client -l 1 --clear-temp)" || {
 	echo "Failed to fetch waifu! ($client $rating $tags)" >&2
 	exit 1
 }
