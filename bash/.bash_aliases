@@ -23,16 +23,17 @@ alias bg-panel="kitten panel --class=bg-panel --edge=background -o background_op
 alias paclist-size="pacman -Qi | grep -E '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
 
 function waifu() {
-	local file="$(~/scripts/waifu/waifu.sh "$@")" || return
-	kitty icat "$file"
+	local file
+	file="$(~/scripts/waifu/waifu.sh "$@")" || return
+	timg -C "$file"
 }
 
 function daily_waifu() {
-	local possible_types="sfw waifu\nsfw neko\nsfw shinobu\nsfw megumin"
 	local program=("${1:-timg}") # Use array for programs with args
 	[ "${program[0]}" = "kitty" ] && local program=(kitty icat)
 	
-	local waifu_file="$(~/scripts/waifu/daily-waifu.sh $(printf "$possible_types" | shuf -n1))" || return
+	local waifu_file
+	waifu_file="$(~/scripts/waifu/daily-waifu.sh general random)" || return
 	"${program[@]}" "$waifu_file"
 }
 
@@ -46,7 +47,8 @@ function save_waifu() {
 		"normal")
 			local file="/tmp/waifu";;
 		"daily")
-			local file="$(~/scripts/waifu/daily-waifu.sh)" || return;;
+			local file
+			file="$(~/scripts/waifu/daily-waifu.sh)" || return;;
 	esac
 
 	[ -f "$file" ] || {
