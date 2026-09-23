@@ -77,10 +77,14 @@ function measure() {
 function loop() {
 	local i=0
 	while true; do
-		eval "$*" || return
+		{
+			eval "$*" || return
+		} <&-
 
 		# Flush all input before reading
-		while read -t 0; do :; done
+		while read -t 0.1 -rsn1; do 
+			:
+		done
 		# Input loop, only exits when certain keys are pressed
 		while true; do
 			read -rsn1 key
@@ -89,7 +93,7 @@ function loop() {
 			fi
 			case $key in
 				'q')
-				return ;;
+				break 2 ;;
 				'[D' | '[A')
 				((i > 0)) && ((i--)) && break ;;
 				'[C' | '[B')
