@@ -35,11 +35,6 @@ run = "cd ~/programming"
 desc = "Go to programming"
 
 [[mgr.prepend_keymap]]
-on = ["g", "t"]
-run = "cd ~/.local/share/Trash"
-desc = "Go to trash"
-
-[[mgr.prepend_keymap]]
 on = ["<A-g>", "a"]
 run = "cd sftp://pc//F:/Users/david/Videos/anime"
 desc = "Go to anime folder (remote)"
