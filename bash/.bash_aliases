@@ -77,9 +77,7 @@ function measure() {
 function loop() {
 	local i=0
 	while true; do
-		{
-			eval "$*" || return
-		} <&-
+		eval "$*" || return
 
 		# Flush all input before reading
 		while read -t 0.1 -rsn1; do 
