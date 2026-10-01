@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o pipefail # Don't swallow error codes on pipes
 
-tmp_folder=/tmp/booru-tui-$(id -u)
+tmp_folder=/tmp/booru-tui-$$
 args=()
 page=0
 
