@@ -15,6 +15,15 @@ function flush_input() {
 	done
 }
 
+function read_key() {
+	read -rsn1 key
+	if [[ "$key" == $'\e' ]]; then
+		read -rsn2 -t 0.1 key
+	fi
+
+	echo $key
+}
+
 function clean_exit() {
 	rm -r $tmp_folder
 	tput rmcup
@@ -60,12 +69,8 @@ function paginate() {
 		echo -n "Page:$page"
 		
 		flush_input
-		# Input loop, only exits when certain keys are pressed
 		while true; do
-			read -rsn1 key
-			if [[ "$key" == $'\e' ]]; then
-				read -rsn2 -t 0.1 key
-			fi
+			key="$(read_key)"
 			case $key in
 				'q')
 				clean_exit ;;
