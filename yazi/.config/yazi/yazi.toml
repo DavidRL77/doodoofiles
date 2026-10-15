@@ -22,7 +22,6 @@ extract = [
 
 play = [
     { run = 'mpv --force-window %s', orphan = true, for = "unix", desc="mpv" },
-    { run = 'mpv --force-window --profile=small-subs %s', orphan=true, desc="mpv small-subs" }
 ]
 
 media_options = [
