@@ -1,11 +1,11 @@
 [Unit]
-Description=Blue light filter (from 00:00 to 6:30)
+Description=Blue light filter (from 23:59 to 6:30)
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/wlsunset -S 6:30 -s 00:00
+ExecStart=/usr/bin/wlsunset -S 6:30 -s 23:59
 
 [Install]
 WantedBy=graphical-session.target
