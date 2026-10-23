@@ -4,6 +4,7 @@
 
 This is my personal repo to keep my dotfiles version controlled and be able to share it with friends.
 
+It is in no way prepared for public use, but you can try anyway.
 # Structure
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) to manage my dotfiles with symlinks. It basically works by taking everything within a folder
 and linking those files into the parent directory.
@@ -16,22 +17,16 @@ in a modular fashion. Basic structure:
 
 ```
 dotfiles/
+├── awww
+│   └── .config
+│       └── awww
+│           └── awww.sh
 ├── bash
 │   ├── .bash_aliases
 │   └── .bashrc
-├── cava
+├── batsignal
 │   └── .config
-│       └── cava
-│           └── config
-├── dunst
-│   └── .config
-│       └── dunst
-│           └── dunstrc
-── fuzzel
-│   └── .config
-│       └── fuzzel
-│           ├── colors.ini
-│           └── fuzzel.ini
+│       └── batsignal
 ...
 ```
 Each program has its own folder for its configuration with the respective structure it would have in the home directory.
@@ -46,14 +41,16 @@ When you `stow` any one of these folders, it will take the contents and link the
 # Installation
 Clone this repo in your $HOME (call it whatever you want as long as it's directly under $HOME).
 
-Something like this: `~/dotfiles`.
+Something like:
+```
+git clone https://github.com/DavidRL77/doodoofiles ~/dotfiles
+```
 
 Then all you have to do is `stow` any configuration you want:
 ```
 cd ~/dotfiles
 stow bash/
 stow dunst/
-stow fuzzel/
 stow fuzzel/
 stow hyprland/
 stow micro/
