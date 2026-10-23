@@ -21,3 +21,4 @@ dragon-drop
 ttf-hack-nerd
 cowsay
 syshud
+hyprsunset
