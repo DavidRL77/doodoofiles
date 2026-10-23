@@ -3,8 +3,14 @@
 	"height": 25,
 		
     "modules-left": ["custom/power","custom/notifications","clock", "mpris"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["bluetooth", "network", "battery", "pulseaudio", "cpu"],
+    "modules-center": ["ext/workspaces"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "battery"],
+
+    "ext/workspaces": {
+        "all-outputs": true,
+        "on-click": "activate",
+        "active-only": false
+      },
 
     "custom/power": {
         "format" : "",
@@ -17,7 +23,7 @@
     	"cursor": true,
     	"tooltip": false,
     	"on-click": "~/scripts/waybar/notification-history.sh",
-    	"on-click-middle": "dunstctl history-clear"
+    	"on-click-middle": "killall mako"
     },
 
 
@@ -72,7 +78,7 @@
             "headset": " ",
             "default": [" "],
         },
-        "on-click": "kitty -e --class floating wiremix",
+        "on-click": "kitty -e --class floating wiremix -v output",
     },
 
     "clock": {

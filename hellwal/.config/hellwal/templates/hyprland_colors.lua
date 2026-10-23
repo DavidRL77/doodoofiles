@@ -1,0 +1,4 @@
+return {
+	border1="#%%color1%%ee",
+	border2="#%%color2%%ee"	
+}

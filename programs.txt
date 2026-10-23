@@ -7,7 +7,7 @@ rtorrent
 obs
 bluetui
 fuzzel
-dunst
+mako
 waybar
 hellwal
 swww
@@ -20,3 +20,5 @@ xdg-desktop-portal-termfilechooser-hunkyburrito-git
 dragon-drop
 ttf-hack-nerd
 cowsay
+syshud
+hyprsunset

@@ -2,6 +2,9 @@
 show_hidden = false
 linemode = "size"
 
+[tasks]
+file_workers = 1
+
 [opener]
 edit = [
     { run = 'micro %s', block = true, for = "unix" },
@@ -19,7 +22,6 @@ extract = [
 
 play = [
     { run = 'mpv --force-window %s', orphan = true, for = "unix", desc="mpv" },
-    { run = 'mpv --force-window --profile=small-subs %s', orphan=true, desc="mpv small-subs" }
 ]
 
 media_options = [
@@ -50,6 +52,10 @@ enter = [
 	{ run = "ya emit cd %s", desc = "enter" }
 ]
 
+markdown = [
+	{ run = "glow -t %s", block=true }
+]
+
 [open]
 rules = [
 	{url = "bulk-rename.txt", use = ["edit"]},
@@ -57,6 +63,10 @@ rules = [
 	{ mime = "text/shellscript", use = ["edit", "script", "reveal"]},
 	# Folder
 	{ url = "*/", use = ["enter","open", "reveal" ] },
+	# Html
+	{ mime = "text/html", use = ["edit", "open", "reveal"] },
+	# Markdown
+	{ url = "*.md", use=[ "edit", "markdown", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image

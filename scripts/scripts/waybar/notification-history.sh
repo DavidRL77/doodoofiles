@@ -1,10 +1,12 @@
-count_history=$(dunstctl count history)
-count_displayed=$(dunstctl count displayed)
+count_history=$(makoctl history -j | jq length)
+count_displayed=$(makoctl list -j | jq length)
 
 if [[ $count_displayed > 0 ]]; then
-	dunstctl close-all
+	makoctl dismiss -a
 else
+	makoctl mode -s history
 	for ((i=1; i<=count_history; i++)); do
-	    dunstctl history-pop
+	    makoctl restore
 	done
+	makoctl mode -r history
 fi

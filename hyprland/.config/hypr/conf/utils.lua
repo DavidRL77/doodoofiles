@@ -1,0 +1,85 @@
+function debug_notify(value)
+    hl.notification.create({text=tostring(value),timeout=5000})
+end
+
+--- Resize window based on percentage of monitor size
+--- @param x integer
+--- @param y integer
+--- @param window any
+function set_size_percentage(x,y, window)
+    window = window or hl.get_active_window()
+    if not window then return end
+
+    local monitor = hl.get_active_monitor()
+    if not monitor then return end
+
+    local width = x / 100 * monitor.height
+    local height = y / 100 * monitor.width
+
+    hl.dispatch(hl.dsp.window.resize({x=height, y=width, relative=false,window=window}))
+end
+
+function smart_float(window)
+    window = window or hl.get_active_window()
+    if not window then return end
+
+    hl.dispatch(hl.dsp.window.float({ action = "toggle", window=window}))
+    if window.floating then
+        set_size_percentage(50,50,window)
+    end
+    hl.dispatch(hl.dsp.window.center({window=window}))
+end
+
+function smart_split(window, split_ratio)
+    window = window or hl.get_active_window()
+    split_ratio = split_ratio or 1.5
+    if not window then return end
+
+    hl.dispatch(hl.dsp.layout("togglesplit"))
+    hl.dispatch(hl.dsp.window.swap({direction="up", window=window}))
+
+    local ratio = window.size.x/window.size.y   
+    if ratio >= 1.5 then -- when the window is on horizontal direction
+        hl.dispatch(hl.dsp.layout("splitratio "..split_ratio.." exact"))
+    else
+        hl.dispatch(hl.dsp.layout("splitratio 1 exact"))
+    end
+end
+
+function smart_pin(window)
+    window = window or hl.get_active_window()
+    if not window then return end
+
+    local size = window.size -- only remembers floating size?
+    if not window.pinned then
+        hl.dispatch(hl.dsp.window.resize({window=window, x=size.x, y=size.y, relative=false}))
+        hl.dispatch(hl.dsp.window.float({window=window,action="on"}))
+        hl.dispatch(hl.dsp.window.pin({window=window,action="on"}))
+    else
+        hl.dispatch(hl.dsp.window.pin({window=window,action="off"}))
+    end
+end
+
+---Checks if file exists before executing it, and returns its value or default_value if not
+---@param file any
+---@param default_value any
+---@return any
+function dofile_or_value(file, default_value) 
+    if(not io.open(file, "r")) then return default_value end
+
+    return dofile(file)
+end
+
+---Only open a process once
+---@param cmd string
+---@param kill? boolean If the process is already open, kill it?
+function smart_open(cmd, kill)
+    -- Divide each part of the command like this so it's easier to chain
+    local pgrepCmd = "pgrep -fx \""..cmd.."\""
+    local killCmd = "kill $("..pgrepCmd..")"
+    if kill then
+        hl.exec_cmd(pgrepCmd.." && "..killCmd.." || "..cmd)
+    else
+        hl.exec_cmd(pgrepCmd .." || "..cmd)
+    end
+end

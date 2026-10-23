@@ -1,0 +1,11 @@
+[Unit]
+Description=Load SSH keys
+After=ssh-agent.service
+
+[Service]
+Type=oneshot
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-add
+
+[Install]
+WantedBy=default.target
