@@ -25,7 +25,7 @@ function smart_float(window)
 
     hl.dispatch(hl.dsp.window.float({ action = "toggle", window=window}))
     if window.floating then
-        set_size_percentage(50,50,window)
+        set_size_percentage(70,70,window)
     end
     hl.dispatch(hl.dsp.window.center({window=window}))
 end
