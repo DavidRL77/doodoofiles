@@ -24,6 +24,11 @@ hl.window_rule({
     no_focus = true,
 })
 
+hl.window_rule({
+    match = { class = "discord" },
+    opacity = "0.95 override"
+})
+
 -- Full opacity for anything that isn't the new tab in firefox
 hl.window_rule({
     name="firefox-opacity",
