@@ -1,3 +1,4 @@
+#!/bin/bash
 count_history=$(makoctl history -j | jq length)
 count_displayed=$(makoctl list -j | jq length)
 

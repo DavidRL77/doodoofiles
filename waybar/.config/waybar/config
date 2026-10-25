@@ -2,14 +2,15 @@
 	"reload_style_on_change": true,
 	"height": 25,
 		
-    "modules-left": ["custom/power","custom/notifications","clock", "mpris"],
+    "modules-left": ["custom/power","custom/notifications","clock", "custom/light","mpris"],
     "modules-center": ["ext/workspaces"],
     "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "battery"],
 
     "ext/workspaces": {
         "all-outputs": true,
         "on-click": "activate",
-        "active-only": false
+        "active-only": false,
+        "cursor": true
       },
 
     "custom/power": {
@@ -26,6 +27,19 @@
     	"on-click-middle": "killall mako"
     },
 
+	"custom/light": {
+		"format": "{icon} ",
+		"format-icons": {
+			"enabled": "",
+			"disabled": "󰖨"
+		},
+		"cursor":true,
+		"on-click": "~/scripts/waybar/hyprsunset.sh toggle",
+		"exec": "~/scripts/waybar/hyprsunset.sh info",
+		"exec-on-event": true,
+		"return-type": "json",
+		"interval": 60,
+	},
 
     "hyprland/workspaces": {
         "disable-scroll": true,
