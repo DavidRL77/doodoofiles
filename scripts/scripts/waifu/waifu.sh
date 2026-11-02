@@ -35,11 +35,16 @@ if ! grep -Fxq "$client" "$clients"; then
 	exit 1
 fi
 
-result="$(booru-cli download -r $rating -s random -t $tags -T $blacklist -c $client -l 1 --clear-temp)" || {
+post_json="$(booru-cli json -r $rating -s random -t $tags -T $blacklist -c $client -l 1)" || {
 	echo "Failed to fetch waifu! ($client $rating $tags)" >&2
 	exit 1
 }
 
-mv $result $waifu_file
+post_id="$(echo $post_json | jq .[0].id)"
+post_file="$(booru-cli download -c $client --id $post_id)"
+mv $post_file $waifu_file
+
+setfattr -n "user.id" -v $post_id $waifu_file
+setfattr -n "user.client" -v $client $waifu_file
 
 echo $waifu_file

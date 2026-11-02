@@ -57,9 +57,9 @@ function save_waifu() {
 		return
 	}
 
-	local category="$(getfattr -n user.category "$file" --absolute-names --only-values)"
+	local post_id="$(getfattr -n user.id "$file" --absolute-names --only-values)"
 	local timestamp="$(stat -c %Y "$file")"
-	local final_file="$output"/"$category"_"$timestamp"
+	local final_file="$output"/"$post_id"_"$timestamp"
 	cp "$file" "$final_file"
 	echo "$final_file"
 }
