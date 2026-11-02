@@ -5,6 +5,8 @@ hl.config({
         kb_model   = "",
         kb_options = "",
         kb_rules   = "",
+        numlock_by_default = true,
+        
 
         follow_mouse = 1,
 
@@ -14,6 +16,11 @@ hl.config({
             natural_scroll = true,
         },
     },
+})
+
+hl.device({
+	name="razer-razer-basilisk-v3-x-hyperspeed",
+	sensitivity=-0.3
 })
 
 hl.gesture({fingers=3, direction="horizontal",action="workspace"})
