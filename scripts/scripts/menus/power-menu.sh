@@ -2,7 +2,7 @@
 
 anchor=${1:-center}
 selection="$(printf "1 - Lock\n2 - Shutdown\n3 - Reboot\n4 - Reboot to UEFI\n5 - Suspend\n6 - Log out" | \
-fuzzel --dmenu -l 6 -a $anchor --keyboard-focus on-demand)"
+fuzzel --dmenu -l 6 -a $anchor)"
 
 case $selection in
 	*"Lock")
