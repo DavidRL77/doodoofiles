@@ -89,3 +89,7 @@ hl.bind(mainMod .. " + Next", hl.dsp.exec_cmd("playerctl next"))
 -- Extra
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$WALLPAPER_COMMAND $(xdg-user-dir WALLPAPERS)/*"))
+
+-- Discord
+hl.bind("CTRL + SHIFT + Period", hl.dsp.global("discord:discord-toggle-mute"))
+hl.bind("CTRL + SHIFT + Comma", hl.dsp.global("discord:discord-toggle-deafen"))
