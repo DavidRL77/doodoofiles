@@ -99,7 +99,7 @@ function view() {
 }
 
 # Parse all valid arguments
-while getopts p:c:r:s:t:T arg; do
+while getopts p:c:r:s:t:T: arg; do
 	case "$arg" in
 		# Special case for page, don't add it to the arguments,
 		# but set the starting page
