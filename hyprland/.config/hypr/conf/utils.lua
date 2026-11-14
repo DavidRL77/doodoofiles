@@ -13,8 +13,8 @@ function set_size_percentage(x,y, window)
     local monitor = hl.get_active_monitor()
     if not monitor then return end
 
-    local width = x / 100 * monitor.width
-    local height = y / 100 * monitor.height
+    local width = x / 100 * monitor.width / monitor.scale
+    local height = y / 100 * monitor.height / monitor.scale
 
     hl.dispatch(hl.dsp.window.resize({x=width, y=height, relative=false,window=window}))
 end

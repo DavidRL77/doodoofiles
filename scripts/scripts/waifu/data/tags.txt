@@ -3,3 +3,4 @@ megumin
 1girl,solo
 umamusume
 monogatari_(series),1girl
+chainsaw_man,1girl
