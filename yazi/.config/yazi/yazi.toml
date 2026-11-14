@@ -2,9 +2,6 @@
 show_hidden = false
 linemode = "size"
 
-[tasks]
-file_workers = 1
-
 [opener]
 edit = [
     { run = 'micro %s', block = true, for = "unix" },
