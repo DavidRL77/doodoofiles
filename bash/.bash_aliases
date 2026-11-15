@@ -104,3 +104,8 @@ function loop() {
 		done
 	done
 }
+
+function incognito() {
+	unset HISTFILE
+	echo "This terminal's history will not be saved ;)"
+}
