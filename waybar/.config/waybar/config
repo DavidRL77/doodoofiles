@@ -3,7 +3,7 @@
 	"height": 25,
 		
     "modules-left": ["custom/power","custom/notifications","clock", "custom/light","mpris"],
-    "modules-center": ["ext/workspaces"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "battery"],
 
     "ext/workspaces": {
